@@ -4,6 +4,7 @@
   justify-content: center;           /* 내부 .nav-inner 가운데 정렬 */
   background-color: white;
   border-bottom: 1px solid #ddd;
+  position: relative;                /* 드롭다운 기준 위치 설정 */
 }
 
 .nav-inner {
@@ -20,17 +21,58 @@
 .category-left {
   display: flex;
   align-items: center;
-  margin-right: 40px;                /* ✅ 오른쪽 간격 추가 */
-  flex: 1;                           /* 공간을 충분히 차지하게 */
+  margin-right: 40px;
+  flex: 1;
+}
+
+.menu-wrapper {
+  position: relative; /* ✅ 드롭다운 메뉴 위치 기준 */
 }
 
 .menu-button {
   background: none;
   border: 1px solid #ccc;
-  font-size: 30px;
-  padding: 6px 10px;
+  font-size: 24px;       /* 아이콘 크기 줄이기 */
+  width: 40px;           /* 버튼 너비 고정 */
+  height: 40px;          /* 버튼 높이 고정 */
+  padding: 0;
+  line-height: 1;
+  text-align: center;
   cursor: pointer;
   margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;             /* 버튼 바로 아래 */
+  left: 0;               /* 버튼 왼쪽 정렬 기준 */
+  margin-top: 6px;       /* 버튼과의 간격 */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  width: 200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  padding: 10px 0;
+  border-radius: 4px;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu li {
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f0f0f0;
 }
 
 .category-list {
@@ -72,7 +114,7 @@
 .category-icons {
   display: flex;
   gap: 30px;
-  flex-shrink: 0;                    /* ✅ 오른쪽 아이콘이 줄어들지 않도록 */
+  flex-shrink: 0;
 }
 
 .icon-item {
@@ -86,4 +128,66 @@
 
 .icon-item:hover {
   color: #e67e22;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: auto;
+  max-width: 1200px;
+  margin-top: 8px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+  font-size: 14px;
+  padding: 20px 30px;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.mega-grid {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+}
+
+.mega-column {
+  flex: 1;
+  min-width: 160px;
+}
+
+.mega-column h4 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.mega-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.mega-column li {
+  font-size: 13px;
+  padding: 4px 0;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.mega-column li:hover {
+  color: #e74c3c;
 }

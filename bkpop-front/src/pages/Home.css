@@ -20,7 +20,7 @@
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
-  background-color: rgba(255, 0, 0, 0.05); /* 디버깅용 배경색 */
+  background-color: rgba(0, 0, 0, 0.05); /* 디버깅용 배경색 */
 }
 
 .banner-quick-wrapper {
