@@ -1,0 +1,13 @@
+/* src/components/BannerSlider.css */
+.banner-slider {
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto 0 auto;  /* 위 20px, 좌우 auto, 아래 0 */
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.banner-area {
+  flex: 3;
+  max-width: 800px;
+}

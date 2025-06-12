@@ -1,0 +1,39 @@
+.quick-service {
+  padding: 20px 0;          /* 위아래 여백 20px, 좌우는 0 */
+  width: 100%;              /* 부모 요소 기준으로 전체 너비를 사용 */
+}
+
+.quick-service h2 {
+  font-size: 20px;          /* 제목 글자 크기 */
+  margin-bottom: 10px;      /* 제목 아래 여백 */
+  text-align: center;
+  padding-left: 10px;       /* 왼쪽 안쪽 여백 (살짝 들여쓰기 효과) */
+}
+
+.icon-list {
+  display: flex;            /* 아이콘들을 가로로 배치 (플렉스 박스) */
+  justify-content: center;   /* 아이콘들을 오른쪽으로 정렬함 ← center면 가운데 정렬됨 */
+  flex-wrap: wrap;          /* 줄이 넘치면 자동으로 다음 줄로 넘어감 */
+  gap: 0px;                 /* 아이콘 박스 사이 간격 없음 (0px) */
+}
+
+.icon-box {
+  width: 70px;             /* 각 아이콘 박스의 가로 너비 고정 */
+  text-align: center;       /* 아이콘과 텍스트를 수직 중앙 정렬 */
+  cursor: pointer;          /* 마우스 올리면 커서가 손가락 모양으로 바뀜 */
+  transition: transform 0.2s ease;  /* 호버 시 부드러운 애니메이션 적용 */
+}
+
+.icon-box:hover {
+  transform: scale(1.05);   /* 마우스를 올리면 1.05배 확대 */
+}
+
+.icon {
+  font-size: 35px;          /* 이모지나 아이콘 크기 크게 설정 */
+  margin-bottom: 10px;      /* 아이콘 아래 텍스트와 간격 */
+}
+
+.label {
+  font-size: 14px;          /* 아이콘 이름 글자 크기 */
+  color: #333;              /* 어두운 회색 텍스트 색상 */
+}
