@@ -1,4 +1,5 @@
 // src/components/BannerSlider.js
+import { Box } from '@chakra-ui/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -27,20 +28,25 @@ const bannerData = [
 
 function BannerSlider() {
   return (
-    <div className="banner-slider">
+    <Box w="100%" maxW="1000px" mx="auto" mt={5} overflow="hidden" borderRadius="md">
       <Swiper
         modules={[Autoplay, Pagination]}
         loop={true}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
+        className="mySwiper"
+        style={{
+          '--swiper-pagination-color': '#3182ce',
+          '--swiper-pagination-bullet-inactive-color': '#cbd5e0',
+        }}
       >
         {bannerData.map((item) => (
           <SwiperSlide key={item.id}>
-            <img src={item.image} alt={item.alt} />
+            <img src={item.image} alt={item.alt} style={{ width: '100%', height: 'auto' }} />
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </Box>
   );
 }
 
